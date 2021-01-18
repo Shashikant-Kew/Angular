@@ -1,0 +1,54 @@
+<div>
+    <h3 class="row">Employee CRUD</h3>
+    <form class="form-horizontal" [formGroup]="regForm" (submit)="logForm()">
+        <div class="form-group">
+            <label for="eid" class="control-label col-sm-2">Id: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="eid" id="eid">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ename" class="control-label col-sm-2">Employee name: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="ename" id="ename">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="edesignation" class="control-label col-sm-2">Designation: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="edesignation" id="edesignation">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="esalary" class="control-label col-sm-2">Salary: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="esalary" id="esalary">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-block" (click)="add()">Add</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <h3 class="row">Employee Table</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+        </tr>
+    <ng-container *ngIf="elist">
+        <div class="list-group-item" *ngFor="let person of elist">
+            <tr>
+                <td>{{person.eid}}</td>
+                <td>{{person.ename}}</td>
+                <td>{{person.edesignation}}</td>
+                <td>{{person.esalary}}</td>
+            </tr>
+        </div>
+    </ng-container>
+    </table>
+</div>

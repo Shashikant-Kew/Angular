@@ -1,0 +1,45 @@
+<div>
+    <h3 class="row">Reactive Forms</h3>
+    <form class="form-horizontal" [formGroup]="regForm" (submit)="logForm()">
+        <div class="form-group">
+            <label for="firstname" class="control-label col-sm-2">Firstname: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="firstname" id="firstname">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="control-label col-sm-2">Lastname: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="lastname" id="lastname">
+            </div>
+        </div>
+        <div formGroupName="address">
+            <div class="form-group">
+                <label for="city" class="control-label col-sm-2">City: </label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" formControlName="city" id="city">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="zip" class="control-label col-sm-2">Zip: </label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" formControlName="zip" id="zip">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-block" (click)="set()">Set</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-block" (click)="patch()">Patch</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-block" (click)="reset()">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
