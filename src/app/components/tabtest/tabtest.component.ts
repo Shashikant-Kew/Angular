@@ -10,7 +10,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TabtestComponent implements OnInit {
   regForm: FormGroup;
-  elist: Array<object>
+  person: any;
+  elist: Array<any>
 
   constructor(private frmBuilder: FormBuilder) {
     this.regForm = this.frmBuilder.group({

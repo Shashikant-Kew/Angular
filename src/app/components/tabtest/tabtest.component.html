@@ -33,22 +33,29 @@
     </form>
     <hr>
     <h3 class="row">Employee Table</h3>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Salary</th>
-        </tr>
-    <ng-container *ngIf="elist">
-        <div class="list-group-item" *ngFor="let person of elist">
+    <table class="table">
+        <thead>
             <tr>
-                <td>{{person.eid}}</td>
-                <td>{{person.ename}}</td>
-                <td>{{person.edesignation}}</td>
-                <td>{{person.esalary}}</td>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Action</th>
             </tr>
-        </div>
-    </ng-container>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="elist">
+                    <tr *ngFor="let person of elist">
+                        <td>{{person.eid}}</td>
+                        <td>{{person.ename}}</td>
+                        <td>{{person.edesignation}}</td>
+                        <td>{{person.esalary}}</td>
+                        <td>
+                            <button type="button" class="btn btn-default" (click)="add()">Update</button> 
+                            <button type="button" class="btn btn-default" (click)="add()">Delete</button>
+                        </td>
+                    </tr>
+            </ng-container>
+        </tbody>    
     </table>
 </div>
