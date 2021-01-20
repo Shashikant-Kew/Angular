@@ -26,8 +26,11 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-sm-2">
+            <div class="col-sm-2" *ngIf="!updateFlag">
                 <button type="button" class="btn btn-default btn-block" (click)="add()">Add</button>
+            </div>
+            <div class="col-sm-2" *ngIf="updateFlag">
+                <button type="button" class="btn btn-default btn-block" (click)="update_submit()">Modify</button>
             </div>
         </div>
     </form>
@@ -51,8 +54,8 @@
                         <td>{{person.edesignation}}</td>
                         <td>{{person.esalary}}</td>
                         <td>
-                            <button type="button" class="btn btn-default" (click)="add()">Update</button> 
-                            <button type="button" class="btn btn-default" (click)="add()">Delete</button>
+                            <button type="button" class="btn btn-default" (click)="eupdate(person, $event)">Update</button> 
+                            <button type="button" class="btn btn-default" (click)="edelete(person, $event)">Delete</button>
                         </td>
                     </tr>
             </ng-container>
